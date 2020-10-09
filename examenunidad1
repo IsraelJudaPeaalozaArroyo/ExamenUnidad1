@@ -1,0 +1,86 @@
+package examenunidad1;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ExamenUnidad1 {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);  
+        List dato = new ArrayList();
+        int a=0;
+        
+         for(int t = 1; t <=10; t++){
+            System.out.println(" Ingrese el dato");
+            a=entrada.nextInt();
+            dato.add(a);
+             }
+
+        boolean salir = false;
+        while (!salir) {   
+            
+            System.out.println(" Que operacion desea reaalizar");
+            System.out.println(" 1 - Hacer suma ");
+            System.out.println(" 2 - Hacer resta");
+            System.out.println(" 3 - Hacer Multiplicacion ");
+            System.out.println(" 4 - salir del programa ");
+            int opcion = entrada.nextInt();         
+            switch(opcion) {
+                case 1: 
+                    
+                    Object[] numeros=dato.toArray();
+                        int suma=0;
+                       // int nu = 0;
+                       // System.out.println("Que pocion deceas sumar?(Escribe 3)");
+                       //for(int p=0;p<=2;p++){
+                         //   nu=entrada.nextInt();
+                       // }
+                        for(int i=0;i<numeros.length;i++){
+                            
+                                     suma+=Float.parseFloat(numeros[i].toString());
+                                     
+                        }
+                        System.out.println(" la suma es: "+suma);
+     
+ 
+                    break;
+                case 2: 
+                    Object[] numero=dato.toArray();
+                        int resta=0;
+                        
+                        for(int j=0;j<numero.length;j++){
+                            
+                                     resta-=Float.parseFloat(numero[j].toString());
+                                     
+                        }
+                        System.out.println(" la resta es: "+resta);
+                    
+                    break;
+                case 3: 
+                    Object[] numero1=dato.toArray();
+                        double mul=0;
+                        
+                        for(int p=0;p<numero1.length;p++){
+                            
+                                     mul*=Float.parseFloat(numero1[p].toString());
+                                     
+                        }
+                        System.out.println(" la multiplicasion es: "+mul);
+                    
+                    break;
+                
+                case 4:
+                    salir = true;
+                    System.out.println("Saliendo del programa");
+                    break;
+                default: 
+                    System.out.println(" ");
+                    System.out.println("Opcion invalida!!!!!!!");
+        
+                }
+        }
+        
+        
+    }
+}
